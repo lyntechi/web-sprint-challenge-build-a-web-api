@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(logger());
 server.use(actionRouter);
 server.use(welcomeRouter);
-server.use(projectRouter)
+server.use(projectRouter);
 
 server.listen(port, () => {
   console.log(`server listening on port ${port}`);

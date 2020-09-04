@@ -16,18 +16,18 @@ router.get("/projects", (req, res) => {
     });
 });
 router.get("/projects", (req, res) => {
-    getProjectActions
-      .get()
-      .then((projects) => {
-        res.status(200).json(projects);
-      })
-      .catch((error) => {
-        console.log(error);
-        res.status(500).json({
-          message: "Error retrieving project",
-        });
+  getProjectActions
+    .get()
+    .then((projects) => {
+      res.status(200).json(projects);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({
+        message: "Error retrieving project",
       });
-  });
+    });
+});
 router.get("/projects/:id", (req, res) => {
   projects
     .get(req.params.id)
