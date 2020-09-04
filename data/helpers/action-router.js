@@ -69,4 +69,27 @@ router.put("/actions/:id", (req, res) => {
     });
 });
 
+router.delete("/actions/:id", (req, res) => {
+  actions
+    .remove(req.params.id)
+    .then((action) => {
+        
+      if (action > 0) {
+        res.status(200).json({
+          message: "The user has been removed",
+        });
+      } else {
+        res.status(404).json({
+          message: "The user could not be found",
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({
+        message: "Error deleting the action",
+      });
+    });
+});
+
 module.exports = router;
