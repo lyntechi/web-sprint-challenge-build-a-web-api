@@ -1,9 +1,10 @@
 const express = require("express");
 const actions = require("./actionModel");
-const router = exoress.Router();
+const router = express.Router();
 
 router.get("/actions", (req, res) => {
   actions
+    .get()
     .then((action) => {
       res.status(200).json(action);
     })
