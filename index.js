@@ -4,7 +4,7 @@ const port = 8000;
 
 
 
-
+server.use(express.json())
 
 
 
