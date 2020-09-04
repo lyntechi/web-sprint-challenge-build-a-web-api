@@ -15,9 +15,9 @@ router.get("/projects", (req, res) => {
       });
     });
 });
-router.get("/projects", (req, res) => {
-  getProjectActions
-    .get()
+router.get("/projects/:id/actions", (req, res) => {
+  projects
+    .getProjectActions(req.params.id)
     .then((projects) => {
       res.status(200).json(projects);
     })
